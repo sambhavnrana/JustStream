@@ -1,0 +1,72 @@
+paginationWap .pagination{
+    background-color: #2b2b31;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 0;
+}
+.paginationWap .pagination .page-item{
+    display: block;
+    position: relative;
+    height: 50px;
+    transition: 0.4s ease;
+}
+.paginationWap .pagination .page-item a {
+    font-size: 16px;
+    height: 50px;
+    background-color: transparent;
+    border:0;
+    display: block;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    border-radius: 4px;
+    line-height: 35px;
+    line-height: 50px;
+    padding: 0 20px;
+}
+.paginationWap .pagination .page-item.active a{
+    color: #fff;
+    cursor: default;
+    font-weight: 500;
+    background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+    box-shadow: 0 0 20px 0 rgb(255 88 96 / 50%);
+}
+.paginationWap .pagination .page-item:hover a {
+    color: #fff;
+}
+.socialIconsList{
+    text-align: center;
+    margin-top: 20px;
+}
+.socialIconsList li{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.socialIconsList li a{
+    color: #fff;
+    font-weight: 500;
+    background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
+    box-shadow: 0 0 20px 0 rgb(255 88 96 / 50%);
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.socialIconsList li a:hover{
+    background:#fff;
+    color: #ff5860;
+}
+.head_3{
+    text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 576px) {
+    .paginationWap .pagination .page-item a{
+        font-size: 15px;
+        padding: 0 9px;
+    }
+}
