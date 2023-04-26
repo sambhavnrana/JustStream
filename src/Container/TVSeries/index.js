@@ -27,7 +27,6 @@ const TvSeriesContainer = () => {
     setContent(data.results);
     setPaginationno(data.total_pages);
     setOtt(`https://www.justwatch.com/in/search?q=${data.original_title}`);
-
   };
 
   useEffect(() => {
@@ -98,11 +97,11 @@ const TvSeriesContainer = () => {
           </Col>
         </Row>
       </Container>
-      <span>OTT:<a href={ott}>imdb</a></span>{" "}
+      <span>
+        OTT:<a href={ott}>OTT</a>
+      </span>{" "}
     </main>
   );
 };
-
-
 
 export default TvSeriesContainer;

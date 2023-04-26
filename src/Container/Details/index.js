@@ -149,7 +149,7 @@ const DetailsContainer = () => {
                 </li>
               </ul>
               <div className="description_readmore_wrapper ">{overview}</div>
-              <span>OTT:<a href={ott}>imdb</a></span>{" "}
+              <span>OTT:<a href={ott}>OTT</a></span>{" "}
             </div>
           </div>
         </Col>
