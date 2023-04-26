@@ -11,6 +11,7 @@ import DarkVariantExample from '../../Components/Carousel';
 const DetailsContainer = () => {
   const params = useParams();
   const [content, setContent] = useState();
+  const [ott, setOtt] = useState();
   const [video, setVideo] = useState();
   const [credits, setCredits] = useState();
   const titleName =
@@ -29,6 +30,7 @@ const DetailsContainer = () => {
         `https://api.themoviedb.org/3/${_media_type}/${id}?api_key=${API_KEY}&language=en-US`
       );
       setContent(data);
+      setOtt(`https://www.justwatch.com/in/search?q=${data.original_title}`);
     } catch (error) {
       console.error(error);
     }
@@ -147,6 +149,7 @@ const DetailsContainer = () => {
                 </li>
               </ul>
               <div className="description_readmore_wrapper ">{overview}</div>
+              <span>OTT:<a href={ott}>imdb</a></span>{" "}
             </div>
           </div>
         </Col>

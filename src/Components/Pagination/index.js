@@ -10,7 +10,6 @@ const PaginationComponent = (props)=>{
         handleClick(pageNo);
         window.scrollTo(0, 0)
     }
-      
     
     return(
         <>
