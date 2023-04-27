@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./details.css";
 import { img_300, img_not_available } from "../../Config";
-import DarkVariantExample from '../../Components/Carousel';
+import DarkVariantExample from "../../Components/Carousel";
 
 const DetailsContainer = () => {
   const params = useParams();
@@ -30,7 +30,12 @@ const DetailsContainer = () => {
         `https://api.themoviedb.org/3/${_media_type}/${id}?api_key=${API_KEY}&language=en-US`
       );
       setContent(data);
-      setOtt(`https://www.justwatch.com/in/search?q=${data.original_title}`);
+      console.log(data);
+      if (data.homepage == '') {
+        setOtt(`https://www.justwatch.com/in/search?q=${data.name}`);
+      } else {
+        setOtt(`https://www.justwatch.com/in/search?q=${data.original_title}`);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -46,15 +51,17 @@ const DetailsContainer = () => {
   //     console.error(error);
   //   }
   // };
-  const fetchVideo = async () =>{
-        try{
-          const {data} = await axios.get(`https://api.themoviedb.org/3/${_media_type}/${id}/videos?api_key=${API_KEY}&language=en-US`);
-          setVideo(data.results[0]?.key);
-          //console.log('fetchVideo',  data);
-        }catch(error){
-          console.error(error)
-        }
+  const fetchVideo = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/${_media_type}/${id}/videos?api_key=${API_KEY}&language=en-US`
+      );
+      setVideo(data.results[0]?.key);
+      //console.log('fetchVideo',  data);
+    } catch (error) {
+      console.error(error);
     }
+  };
 
   const creditsFetch = async () => {
     try {
@@ -149,7 +156,9 @@ const DetailsContainer = () => {
                 </li>
               </ul>
               <div className="description_readmore_wrapper ">{overview}</div>
-              <span>OTT:<a href={ott}>OTT</a></span>{" "}
+              <span>
+                OTT:<a href={ott}>OTT</a>
+              </span>{" "}
             </div>
           </div>
         </Col>
@@ -176,20 +185,21 @@ const DetailsContainer = () => {
         <Container>
           {titleName && titleName !== "" ? renderDataHtml() : "Loading..."}
         </Container>
-        <section className='section'>
-                <div  className='contentHead'>
-                    <Container>
-                        <Row>
-                            <Col className='col-12'>
-                                {
-                                    credits && credits.length > 0 ? <DarkVariantExample data={credits} /> : 'Lading data...'
-                                }
-                                
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
-            </section>
+        <section className="section">
+          <div className="contentHead">
+            <Container>
+              <Row>
+                <Col className="col-12">
+                  {credits && credits.length > 0 ? (
+                    <DarkVariantExample data={credits} />
+                  ) : (
+                    "Lading data..."
+                  )}
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </section>
       </main>
     </>
   );
