@@ -29,7 +29,7 @@ const FooterComponent = ()=>{
                                     </a>
                                 </li>
                                 <li>
-                                    <a rel="noreferrer" href="https://github.com/sambhavrana27" target="_blank">
+                                    <a rel="noreferrer" href="https://github.com/sambhavnrana" target="_blank">
                                         <BsGithub />
                                     </a>
                                 </li> 
