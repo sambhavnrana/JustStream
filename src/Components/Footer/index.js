@@ -38,7 +38,7 @@ const FooterComponent = ()=>{
                         </Col>
                         <Col className='col-12'>
                             <div className="footerCopyright">
-                                <small>Developed and Designed  by <a href="https://github.com/sambhavrana27" target="_blank" rel="noreferrer">Batch - 7</a>.</small>
+                                <small>Developed and Designed  by <a href="https://github.com/sambhavnrana" target="_blank" rel="noreferrer">Batch - 7</a>.</small>
                             </div>
                         </Col>
                    </Row>
