@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const HeaderComponents = () => {
   const navData = [
+    
     { name: "Home", link: "/" },
     { name: "Movies", link: "/movies" },
     { name: "TV Series", link: "/series" },
@@ -19,7 +20,9 @@ const HeaderComponents = () => {
     <header className="header">
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand>JustStream</Navbar.Brand>
+          <Link to="/">
+              JustStream          
+            </Link>
           <Navbar.Toggle area-contrls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
