@@ -20,9 +20,8 @@ const HeaderComponents = () => {
     <header className="header">
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Link to="/">
-              JustStream          
-            </Link>
+        <Link to="/" className="text-primary bg-success fs-3 m-2 p-3 border border-primary border-2">JustStream</Link>
+                                {/* <Navbar.Brand>JustStream</Navbar.Brand> */}
           <Navbar.Toggle area-contrls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
